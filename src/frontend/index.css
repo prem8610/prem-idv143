@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* RideRapid Blue - Deep navy midnight meets electric azure */
+    --background: 0.96 0.012 240;
+    --foreground: 0.12 0.035 255;
+
+    --card: 1 0 0;
+    --card-foreground: 0.12 0.035 255;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.12 0.035 255;
+
+    /* Electric Blue primary */
+    --primary: 0.52 0.22 262;
+    --primary-foreground: 1 0 0;
+
+    /* Soft blue secondary */
+    --secondary: 0.92 0.04 240;
+    --secondary-foreground: 0.25 0.06 255;
+
+    --muted: 0.93 0.025 240;
+    --muted-foreground: 0.52 0.04 240;
+
+    /* Amber accent for rewards */
+    --accent: 0.82 0.15 75;
+    --accent-foreground: 0.15 0.04 55;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.03 240;
+    --input: 0.88 0.03 240;
+    --ring: 0.52 0.22 262;
+
+    --chart-1: 0.52 0.22 262;
+    --chart-2: 0.65 0.15 160;
+    --chart-3: 0.82 0.15 75;
+    --chart-4: 0.70 0.20 30;
+    --chart-5: 0.60 0.18 300;
+
+    /* Dark navy sidebar */
+    --sidebar: 0.17 0.06 260;
+    --sidebar-foreground: 0.94 0.02 240;
+    --sidebar-primary: 0.60 0.22 262;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.22 0.07 260;
+    --sidebar-accent-foreground: 0.90 0.03 240;
+    --sidebar-border: 0.25 0.06 260;
+    --sidebar-ring: 0.52 0.22 262;
+
+    /* Custom brand tokens */
+    --ride-blue: 0.52 0.22 262;
+    --ride-blue-dark: 0.35 0.18 262;
+    --ride-amber: 0.82 0.15 75;
+    --ride-success: 0.65 0.17 145;
+    --ride-navy: 0.17 0.06 260;
+  }
+
+  .dark {
+    --background: 0.12 0.04 260;
+    --foreground: 0.94 0.02 240;
+
+    --card: 0.17 0.05 260;
+    --card-foreground: 0.94 0.02 240;
+
+    --popover: 0.20 0.06 260;
+    --popover-foreground: 0.94 0.02 240;
+
+    --primary: 0.60 0.22 262;
+    --primary-foreground: 0.12 0.04 260;
+
+    --secondary: 0.22 0.06 260;
+    --secondary-foreground: 0.94 0.02 240;
+
+    --muted: 0.22 0.06 260;
+    --muted-foreground: 0.60 0.05 240;
+
+    --accent: 0.82 0.15 75;
+    --accent-foreground: 0.15 0.04 55;
+
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+
+    --border: 0.25 0.06 260;
+    --input: 0.25 0.06 260;
+    --ring: 0.52 0.22 262;
+
+    --chart-1: 0.60 0.22 262;
+    --chart-2: 0.65 0.15 160;
+    --chart-3: 0.82 0.15 75;
+    --chart-4: 0.70 0.20 30;
+    --chart-5: 0.60 0.18 300;
+
+    --sidebar: 0.12 0.04 260;
+    --sidebar-foreground: 0.94 0.02 240;
+    --sidebar-primary: 0.60 0.22 262;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.18 0.06 260;
+    --sidebar-accent-foreground: 0.90 0.03 240;
+    --sidebar-border: 0.20 0.05 260;
+    --sidebar-ring: 0.52 0.22 262;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .ride-gradient {
+    background: linear-gradient(135deg, oklch(0.52 0.22 262), oklch(0.35 0.18 262));
+  }
+
+  .ride-gradient-light {
+    background: linear-gradient(135deg, oklch(0.60 0.22 262 / 0.1), oklch(0.82 0.15 75 / 0.08));
+  }
+
+  .card-shadow {
+    box-shadow: 0 4px 20px oklch(0.52 0.22 262 / 0.12);
+  }
+
+  .card-shadow-lg {
+    box-shadow: 0 8px 40px oklch(0.52 0.22 262 / 0.18);
+  }
+
+  .sidebar-glow {
+    box-shadow: 4px 0 24px oklch(0.17 0.06 260 / 0.4);
+  }
+
+  .text-ride-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.35s ease-out forwards;
+  }
+
+  .stagger-1 { animation-delay: 0.05s; opacity: 0; }
+  .stagger-2 { animation-delay: 0.1s; opacity: 0; }
+  .stagger-3 { animation-delay: 0.15s; opacity: 0; }
+  .stagger-4 { animation-delay: 0.2s; opacity: 0; }
+  .stagger-5 { animation-delay: 0.25s; opacity: 0; }
+
+  .nav-item-active {
+    background: oklch(0.52 0.22 262 / 0.25);
+    border-left: 3px solid oklch(0.60 0.22 262);
+  }
+
+  .nav-item-hover {
+    transition: background 0.2s ease, border-left 0.2s ease;
+  }
+
+  .leaflet-container {
+    height: 100%;
+    width: 100%;
+    border-radius: var(--radius);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px oklch(0.52 0.22 262 / 0.3); }
+  50% { box-shadow: 0 0 24px oklch(0.52 0.22 262 / 0.6); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Leaflet overrides */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(26, 115, 232, 0.2) !important;
+}
